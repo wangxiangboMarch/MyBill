@@ -19,7 +19,7 @@ struct TransactionRow: View {
                 .fill(Color.icon.opacity(0.3))
                 .frame(width: 44, height: 44)
                 .overlay {
-                    FontIcon.text(.awesome5Solid(code: .icons), fontsize: 24, color: Color.icon)
+                    FontIcon.text(.awesome5Solid(code: transaction.icon), fontsize: 24, color: Color.icon)
                 }
             
             VStack(alignment: .leading, spacing: 6) {
@@ -33,7 +33,7 @@ struct TransactionRow: View {
                     .opacity(0.7)
                     .lineLimit(1)
                 
-                Text(transaction.dateParsed, format: .dateTime.year().month().day())
+                Text(transaction.date)
                     .font(.footnote)
                     .foregroundColor(Color.secondary)
             }
